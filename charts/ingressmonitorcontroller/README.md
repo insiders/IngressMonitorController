@@ -34,22 +34,23 @@ helm install stakater/ingressmonitorcontroller
 | kube-rbac-proxy.image.pullPolicy             | `IfNotPresent`                              | Pull policy for the image                                                                      |
 | imagePullSecrets             | ``                                    | List of secrets used to pull images                                                            |
 | nameOverride                 | `""`                                  | Partial override for ingress-monitor-controller.fullname template (will keep the release name) |
-| fullnameOverride             | `""`                                  | Full override for ingress-monitor-controller.fullname template                                 |
-| watchNamespaces              | `""`                                  | Comma separated namespace names, set empty to watch all namespaces                             |
-| configSecretName             | `"imc-config"`                        | Name of secret that contains configuration                                                     |
-| rbac.create                  | `true`                                | Whether to create RBAC                                                                         |
-| rbac.allowProxyRole          | `true`                                | Whether to create RBAC for proxy                                                               |
+| fullnameOverride             | `""`                                  | Full override for ingress-monitor-controller.fullname template                                |
+| watchNamespaces              | `""`                                  | Comma separated namespace names, set empty to watch all namespaces                            |
+| configSecretName             | `"imc-config"`                        | Name of secret that contains configuration                                                    |
+| rbac.create                  | `true`                                | Whether to create RBAC                                                                        |
+| rbac.allowProxyRole          | `true`                                | Whether to create RBAC for proxy                                                              |
 | rbac.allowMetricsReaderRole  | `true`                                | Whether to create RBAC for metrics-reader                                                      |
 | rbac.allowLeaderElectionRole | `true`                                | Whether to create leader-election                                                              |
-| serviceAccount.create        | `true`                                | Whether to create serviceAccount                                                               |
+| serviceAccount.create        | `true`                                | Whether to create serviceAccount                                                              |
 | serviceAccount.name          | `""`                                  | Name for ServiceAccount, if empty the default chart name will be used                          |
 | serviceAccount.labels        | `{}`                                  | Additional labels on ServiceAccount                                                            |
-| serviceAccount.annotations   | `{}`                                  | Additional annotations on ServiceAccount                                                       |
+| serviceAccount.annotations   | `{}`                                  | Additional annotations on ServiceAccount                                                      |
 | serviceMonitor.enabled       | `false`                               | Create ServiceMonitor for metrics                                                              |
-| podAnnotations               | `""`                                  | Additional annotations on deployment                                                           |
-| resources                    | `{}`                                  | Requests/Limits for operator                                                                   |
-| securityContext              | `{}`                                  | Override for SecurityContext                                                                   |
-| podSecurityContext           | `{}`                                  | Override for deployment.Spec.securityContext                                                   |
+| deploymentAnnotations        | `""`                                  | Additional annotations on deployment itself                                                    |
+| podAnnotations               | `""`                                  | Additional annotations on deployment's podspec                                                |
+| resources                    | `{}`                                  | Requests/Limits for operator                                                                  |
+| securityContext              | `{}`                                  | Override for SecurityContext                                                                  |
+| podSecurityContext           | `{}`                                  | Override for deployment.Spec.securityContext                                                  |
 | nodeSelector                 | `{}`                                  | Override for NodeSelector                                                                      |
-| tolerations                  | `{}`                                  | Override for Tolerations                                                                       |
+| tolerations                  | `{}`                                  | Override for Tolerations                                                                      |
 | affinity                     | `{}`                                  | Override for Affinity                                                                          |
